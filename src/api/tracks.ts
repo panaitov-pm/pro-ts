@@ -10,8 +10,8 @@ export const tracksApi = (token: string) =>
 
 export const getTracksBySearch =
     (api: AxiosInstance) =>
-    async (search: string): Promise<SpotifyApi.TrackSearchResponse> => {
-        return api.get(`search?q=${search}&type=track&offset=1`).then((res) => res.data);
+    async ({ search, page }: { search: string; page: number }): Promise<SpotifyApi.TrackSearchResponse> => {
+        return api.get(`search?q=${search}&type=track&offset=${page}`).then((res) => res.data);
     };
 
 export const getTracksById =

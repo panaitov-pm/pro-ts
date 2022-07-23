@@ -44,3 +44,12 @@
     margin-top: auto;
     text-align: right;
 }
+
+.pagination {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    ul {
+        justify-content: flex-end;
+    }
+}
