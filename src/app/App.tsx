@@ -1,9 +1,10 @@
 import React from 'react'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { Home } from '../pages/Home'
 import { About } from '../pages/About'
 import { Navbar } from '../components/Navbar'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 const queryClient = new QueryClient()
 
@@ -23,6 +24,7 @@ function App() {
           </Switch>
         </div>
       </BrowserRouter>
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   )
 }
